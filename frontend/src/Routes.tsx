@@ -1,7 +1,7 @@
 // especificar as routas do sistema
 import Dashboard from 'pages/Dashboard';
 import Home from 'pages/Home';
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route} from 'react-router-dom';
 
 
 function Routes() {
