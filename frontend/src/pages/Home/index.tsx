@@ -2,7 +2,7 @@ import Footer from "components/Footer";
 import NavBar from "components/NavBar";
 import { Link } from "react-router-dom";
 
-function Home() {
+const Home = () => {
     return (
 
         <>

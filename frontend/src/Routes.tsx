@@ -1,10 +1,10 @@
-// especificar as routas do sistema
+// especificar as rotas do sistema
 import Dashboard from 'pages/Dashboard';
 import Home from 'pages/Home';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
 
-function Routes() {
+const Routes = () => {
     return (
         
         <BrowserRouter>
@@ -14,7 +14,7 @@ function Routes() {
                     
                 </Route>
 
-                <Route path="/dashboard" exact >
+                <Route path="/dashboard"  >
                             <Dashboard /> 
                     
                 </Route>

@@ -12,15 +12,17 @@ const DataTable = () => {
         first : true, 
         last : true,
         number: 0,
-            totalElements: 0,
-            totalPages: 0
+        totalElements: 0,
+        totalPages: 0
     });
 
     useEffect(()=> {
-         axios.get(`${BASE_URL}/sales?page=${activePage}&size=20&sort=date,desc`) //?page=1&size=20&sort=date,desc
-         .then(response => {
+        axios.get(`${BASE_URL}/sales?page=${activePage}size=20&sort=date,desc`) //?page=1&size=20&sort=date,desc
+        //axios.get(`${BASE_URL}/sales?page=4&size=10&sort=date,desc`)
+        // axios.get(`${BASE_URL}/sales`)
+         .then((response) => {
              setPage(response.data);
-         })
+         });  
     }, [activePage]);
 
     const changePage = (index: number ) => {
@@ -54,20 +56,10 @@ const DataTable = () => {
                       </tr>
 
                     ))}
-                  
-
-
-                        
-
                 </tbody>
             </table>
         </div>
-
-
-
         </>
-
-
     );
 }
 
