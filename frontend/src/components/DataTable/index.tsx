@@ -14,16 +14,18 @@ const DataTable = () => {
         number: 0,
         totalElements: 0,
         totalPages: 0
-    });
+    })
+
+//axios.get(`${BASE_URL}/sales?page=8&size=20&sort=date,desc`)
 
     useEffect(()=> {
-        axios.get(`${BASE_URL}/sales?page=${activePage}size=20&sort=date,desc`) //?page=1&size=20&sort=date,desc
-        //axios.get(`${BASE_URL}/sales?page=4&size=10&sort=date,desc`)
-        // axios.get(`${BASE_URL}/sales`)
+        axios.get(`${BASE_URL}/sales?page=${activePage}&size=20&sort=date,desc`) //?page=1&size=20&sort=date,desc
+        
+        //axios.get(`${BASE_URL}/sales`)
          .then((response) => {
              setPage(response.data);
-         });  
-    }, [activePage]);
+         })
+    }, [activePage]);// activePage
 
     const changePage = (index: number ) => {
         setActivePage(index);
@@ -46,7 +48,7 @@ const DataTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    { page.contente?.map(item => (
+                    { page.content?.map(item => (
                           <tr key={item.id}  >
                           <td>{formatLocalDate(item.date, "dd/MM/yyyy")}</td>
                           <td>{item.seller.name}</td>
